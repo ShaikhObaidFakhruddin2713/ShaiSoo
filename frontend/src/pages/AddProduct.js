@@ -42,7 +42,7 @@ const AddProduct = () => {
         data.append('image', image);
       }
 
-      const res = await fetch('/api/products', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/products`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${user.token}`

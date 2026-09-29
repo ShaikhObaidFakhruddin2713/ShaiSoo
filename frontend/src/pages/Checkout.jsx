@@ -40,7 +40,7 @@ const Checkout = () => {
     setLoading(true);
 
     try {
-      const orderRes = await fetch('/api/payments/order', {
+      const orderRes = await fetch(`${process.env.REACT_APP_API_URL}/api/payments/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ const Checkout = () => {
 
         handler: async function (response) {
           try {
-            const verifyRes = await fetch('/api/payments/verify', {
+            const verifyRes = await fetch(`${process.env.REACT_APP_API_URL}/api/payments/verify`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const Checkout = () => {
               );
             }
 
-            const saveOrderRes = await fetch('/api/orders', {
+            const saveOrderRes = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

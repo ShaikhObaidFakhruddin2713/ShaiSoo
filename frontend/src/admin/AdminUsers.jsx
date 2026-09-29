@@ -7,7 +7,7 @@ const AdminUsers = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch('/api/auth/users', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/users`, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       const data = await res.json();
